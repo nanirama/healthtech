@@ -2,13 +2,17 @@ import React from 'react';
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
 // import SEO from '../components/seo'
-// import CategoryIndex from '../components/blog/CategoryIndex';
+import CategoryIndex from '../components/blog/CategoryIndex';
+import CategoryListsection from "../components/elements/CategoryList"
 const Blog = (props) => {  
     const { currentPage, numPages } = props.pageContext     
     const { CatData, PostData } = props.data
     return (
     <Layout>
-        {/* <CategoryIndex category={CatData} data={PostData} /> */}
+        <div className="max-w-7xl mx-auto px-4 py-16 pagecontainer">
+        <CategoryListsection />
+        <CategoryIndex category={CatData} data={PostData} />
+        </div>
         {/* <SEO cpath = {props.cpath} /> */}
         {/* <div className="blog_blk w-100 float-left py-4">   
         <div className="container">

@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
-// import BlogIndex from '../components/blog'
+import BlogIndex from '../components/blog'
 const BlogTemplate = (props) => {
   console.log('props', props)
   const { title } = props.data.postDetails
   return (
     <Layout>
       <div className="relative pt-28 md:pb-28 pb-20">
-        {/* <BlogIndex props={props}/> */}
+        <BlogIndex props={props}/>
       </div>    
     </Layout>
   )

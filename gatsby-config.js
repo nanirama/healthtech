@@ -64,7 +64,7 @@ module.exports = {
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 6 : 600,
+            limit: process.env.NODE_ENV === 'development' ? 100 : 600,
           },
           Page: {
             exclude: true,
@@ -82,7 +82,7 @@ module.exports = {
             limit: 250,
           },
           Category: {
-            limit: 30,
+            limit: 50,
           },
           User: {
             limit: 150,
