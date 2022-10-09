@@ -47,59 +47,59 @@ module.exports = {
         icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-source-wordpress`,
-    //   options: {
-    //     url: `https://www.levelshealth.com/graphql`,     
-    //     production: {
-    //       allow404Images: false
-    //     },    
-    //     schema: {
-    //       requestConcurrency: 50,
-    //       queryDepth: 5,
-    //       perPage: 10,
-    //       timeout: 36000000,
-    //     },
-    //     html: {
-    //       useGatsbyImage: true,
-    //       createStaticFiles: true,
-    //     },
-    //     debug: {
-    //       timeBuildSteps: true,
-    //     },
-    //     type: {
-    //       __all: {
-    //         limit: process.env.NODE_ENV === 'development' ? 6 : 6,
-    //       },
-    //       Page: {
-    //         exclude: true,
-    //       },
-    //       MenuItem: {
-    //         exclude: true,
-    //       },
-    //       Menu: {
-    //         exclude: true,
-    //       },
-    //       Comment: {
-    //         exclude: true,
-    //       },
-    //       Tag: {
-    //         limit: 250,
-    //       },
-    //       Category: {
-    //         limit: 20,
-    //       },
-    //       User: {
-    //         limit: 150,
-    //       },
-    //       MediaItem: {
-    //         localFile: {
-    //           requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5,
-    //           maxFileSizeBytes: 5485760,
-    //         },
-    //       },
-    //     },
-    //   }
-    // },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://www.levelshealth.com/graphql`,     
+        production: {
+          allow404Images: false
+        },    
+        schema: {
+          requestConcurrency: 50,
+          queryDepth: 5,
+          perPage: 10,
+          timeout: 36000000,
+        },
+        html: {
+          useGatsbyImage: true,
+          createStaticFiles: true,
+        },
+        debug: {
+          timeBuildSteps: true,
+        },
+        type: {
+          __all: {
+            limit: process.env.NODE_ENV === 'development' ? 6 : 6,
+          },
+          Page: {
+            exclude: true,
+          },
+          MenuItem: {
+            exclude: true,
+          },
+          Menu: {
+            exclude: true,
+          },
+          Comment: {
+            exclude: true,
+          },
+          Tag: {
+            limit: 250,
+          },
+          Category: {
+            limit: 20,
+          },
+          User: {
+            limit: 150,
+          },
+          MediaItem: {
+            localFile: {
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5,
+              maxFileSizeBytes: 5485760,
+            },
+          },
+        },
+      }
+    },
   ],
 }
