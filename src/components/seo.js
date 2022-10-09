@@ -41,10 +41,7 @@
         htmlAttributes={{
           lang
         }}
-        title={siteTitle}
-        titleTemplate={siteTitle}
       >
-       <meta name="description" content={metaDescription} />
        {/* <meta name="image" content={pImage} />
 
        <meta name="og:locale" content={lang} />
