@@ -11,29 +11,29 @@
  import { useStaticQuery, graphql } from "gatsby"
  
  function SEO({ description, lang, meta, title, cpath, pimage, schema, noindex }) {
-   const { site, SiteLogo } = useStaticQuery(
-     graphql`
-       query {
-         site {
-           siteMetadata {
-             title
-             description
-             author
-             siteUrl
-           }
-         }
-         SiteLogo: file(relativePath: {eq: "landing/logo.png"}) {
-          publicURL
-        }
-       }
-     `
-   )
-   const metaDescription = description || site.siteMetadata.description
-   const siteURL = site.siteMetadata.siteUrl 
-   const siteTitle = title || site.siteMetadata.title
-   const curl = siteURL+cpath || ''
-   const siteLogo = siteURL+SiteLogo.publicURL;
-   const pImage = pimage && pimage !=='' ? siteURL+pimage : siteLogo
+  //  const { site, SiteLogo } = useStaticQuery(
+  //    graphql`
+  //      query {
+  //        site {
+  //          siteMetadata {
+  //            title
+  //            description
+  //            author
+  //            siteUrl
+  //          }
+  //        }
+  //        SiteLogo: file(relativePath: {eq: "landing/logo.png"}) {
+  //         publicURL
+  //       }
+  //      }
+  //    `
+  //  )
+  //  const metaDescription = description || site.siteMetadata.description
+  //  const siteURL = site.siteMetadata.siteUrl 
+  //  const siteTitle = title || site.siteMetadata.title
+  //  const curl = siteURL+cpath || ''
+  //  const siteLogo = siteURL+SiteLogo.publicURL;
+  //  const pImage = pimage && pimage !=='' ? siteURL+pimage : siteLogo
    //console.log('Site Logo ', pImage);
    //console.log('Page Title', siteTitle);
    return (
@@ -45,7 +45,7 @@
         titleTemplate={siteTitle}
       >
        <meta name="description" content={metaDescription} />
-       <meta name="image" content={pImage} />
+       {/* <meta name="image" content={pImage} />
 
        <meta name="og:locale" content={lang} />
        <meta name="og:title" content={siteTitle} />
@@ -61,7 +61,7 @@
        <meta name="twitter:image" content={pImage} />
        {noindex === 'noindex' && <meta name="robots" content="noindex, nofollow"></meta>}
        {schema && <script type="application/ld+json">{JSON.stringify(schema)}</script>}
-       {cpath && <link rel="canonical" href={`${siteURL}${cpath}`} />}
+       {cpath && <link rel="canonical" href={`${siteURL}${cpath}`} />} */}
      </Helmet>
    )
  }
