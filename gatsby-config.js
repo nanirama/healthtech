@@ -64,7 +64,7 @@ module.exports = {
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 6 : 6,
+            limit: process.env.NODE_ENV === 'development' ? 6 : 600,
           },
           Page: {
             exclude: true,
@@ -82,14 +82,14 @@ module.exports = {
             limit: 250,
           },
           Category: {
-            limit: 20,
+            limit: 30,
           },
           User: {
             limit: 150,
           },
           MediaItem: {
             localFile: {
-              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5,
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 500,
               maxFileSizeBytes: 5485760,
             },
           },
