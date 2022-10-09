@@ -1,9 +1,3 @@
-const path = require('path');
-
-require('dotenv').config({
-  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
-});
-
 module.exports = {
   siteMetadata: {
     title: `Levels Blog: Ultimate Source for Metabolic Health Information and Advice`,
@@ -50,7 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://www.levelshealth.com/graphql`,     
+        url: `https://www.levelshealth.com/graphql`,        
+        hostingWPCOM: false, 
         production: {
           allow404Images: false
         },    
@@ -61,7 +56,7 @@ module.exports = {
           timeout: 36000000,
         },
         html: {
-          useGatsbyImage: true,
+          useGatsbyImage: false,
           createStaticFiles: true,
         },
         debug: {
