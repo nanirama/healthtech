@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TTHovesBold';
+    src: url('fonts/TTHovesBold.eot');
+    src: url('fonts/TTHovesBold.eot') format('embedded-opentype'),
+         url('fonts/TTHovesBold.woff2') format('woff2'),
+         url('fonts/TTHovesBold.woff') format('woff'),
+         url('fonts/TTHovesBold.ttf') format('truetype'),
+         url('fonts/TTHovesBold.svg#TTHovesBold') format('svg');
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TTHovesRegular';
+    src: url('fonts/TTHovesRegular.eot');
+    src: url('fonts/TTHovesRegular.eot') format('embedded-opentype'),
+         url('fonts/TTHovesRegular.woff2') format('woff2'),
+         url('fonts/TTHovesRegular.woff') format('woff'),
+         url('fonts/TTHovesRegular.ttf') format('truetype'),
+         url('fonts/TTHovesRegular.svg#TTHovesRegular') format('svg');
+}

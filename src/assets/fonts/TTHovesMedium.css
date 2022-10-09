@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TTHovesMedium';
+    src: url('fonts/TTHovesMedium.eot');
+    src: url('fonts/TTHovesMedium.eot') format('embedded-opentype'),
+         url('fonts/TTHovesMedium.woff2') format('woff2'),
+         url('fonts/TTHovesMedium.woff') format('woff'),
+         url('fonts/TTHovesMedium.ttf') format('truetype'),
+         url('fonts/TTHovesMedium.svg#TTHovesMedium') format('svg');
+}
