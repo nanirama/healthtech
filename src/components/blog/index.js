@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import BlogTag from "./BlogTag"
-// import Share from "./Share"
+import Share from "./Share"
 
 const Index = ({ props }) => {
     const { site, postDetails } = props.data
@@ -30,7 +30,7 @@ const Index = ({ props }) => {
             <div className="relative mt-6">
                 <p className="xl:max-w-3xl lg:max-w-2xl md:max-w-xl max-w-full mx-auto px-4 text-center font-normal bannertext md:hidden block">Metabolic health and fitness can be improved by consistently making choices that keep glucose levels in a stable and healthy range.</p>
                 <div className="md:left-0 md:top-5 md:sticky relative s_links px-4">
-                    {/* <Share
+                    <Share
                         socialConfig={{
                             twitter: stwitterHandle,
                             config: {
@@ -38,7 +38,7 @@ const Index = ({ props }) => {
                                 title: stitle,
                             },
                         }}
-                    /> */}
+                    />
                 </div>
                 <p className="xl:max-w-3xl md:max-w-2xl max-w-full mx-auto px-4 text-center font-normal bannertext md:block hidden">Metabolic health and fitness can be improved by consistently making choices that keep glucose levels in a stable and healthy range.</p>
                 <div className="lg:max-w-3xl md:max-w-xl max-w-full px-4 mx-auto mt-24">
@@ -74,11 +74,6 @@ const Index = ({ props }) => {
                     
                 </div>
                 <div className="lg:max-w-3xl md:max-w-xl max-w-full px-4 mx-auto mt-12 blogcontent">
-                    {/* <h2>Heading 2</h2>
-                    <h3>Heading 3</h3>
-                    <h4>Heading 4</h4>
-                    <h5>Heading 5</h5>
-                    <h6>Heading 6</h6> */}
                     {content && <div dangerouslySetInnerHTML={{ __html: content }} className="w-fll" ></div>}
                 </div>
                 <BlogTag tags={tags} modified={modified} />

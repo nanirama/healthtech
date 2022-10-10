@@ -64,7 +64,7 @@ module.exports = {
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 100 : 600,
+            limit: process.env.NODE_ENV === 'development' ? 10 : 600,
           },
           Page: {
             exclude: true,
@@ -79,13 +79,13 @@ module.exports = {
             exclude: true,
           },
           Tag: {
-            limit: 250,
+            limit: process.env.NODE_ENV === 'development' ? 50 : 250,
           },
           Category: {
             limit: 50,
           },
           User: {
-            limit: 150,
+            limit: process.env.NODE_ENV === 'development' ? 5 : 150,
           },
           MediaItem: {
             localFile: {

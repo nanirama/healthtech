@@ -17,11 +17,11 @@ const BlogItem = ({ data }) => {
                 {pcategory && pcategory.name && (
                     <h4 className="uppercase text-xs text-slate-400 pb-1">{pcategory.name}</h4>
                 )} 
-                <h3 className="text-black text-2xl pb-6"><Link to={`/blog/${slug}`}>{title && cutString(title, 35)}</Link></h3>
-                {excerpt && <div dangerouslySetInnerHTML={{ __html: cutString(excerpt, 100).replaceAll('&nbsp;', '') }} className="sm:pb-0 text-base" ></div>}                    
-                <div className="mt-5 author flex justify-between xl:items-center lg:items-start md:items-center items-start gap-4 xl:flex-row lg:flex-col sm:flex-row flex-col mb-2">
+                <h3 className="text-black text-2xl pb-3"><Link to={`/blog/${slug}`}>{title && cutString(title, 35)}</Link></h3>
+                {/* {excerpt && <div dangerouslySetInnerHTML={{ __html: cutString(excerpt, 100).replaceAll('&nbsp;', '') }} className="sm:pb-0 text-base" ></div>}                     */}
+                <div className="mt-3 author flex justify-between xl:items-center lg:items-start md:items-center items-start gap-4 xl:flex-row lg:flex-col sm:flex-row flex-col mb-2">
                 {author?.node?.name && (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 self-start">
                         {author?.node?.avatar?.url && (
                             <img src={author?.node?.avatar?.url} alt={author?.node?.name} width={40} height={40} className="rounded-full" />
                         )}                        
@@ -29,7 +29,7 @@ const BlogItem = ({ data }) => {
                     </div>
                 )}
                 {blogSingle?.readingTime && (
-                    <p className="flex gap-1 items-center text-sm text-gray-500 tracking-tight mb-0">
+                    <p className="flex gap-1 items-center text-sm text-gray-500 tracking-tight mb-0 self-end">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="#5D6465" stroke-width="1.5" stroke-miterlimit="10" />
                         <path d="M10 5.625V10H14.375" stroke="#5D6465" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
