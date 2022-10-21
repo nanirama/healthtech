@@ -1,3 +1,33 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+
+
+const myQuery = `{
+  posts: allWpPost {
+    nodes {
+      objectID:id
+      title
+      excerpt
+      slug
+      dateGmt
+    }
+  }
+}`;
+
+const queries = [
+  {
+    query: myQuery,
+    transformer: ({ data }) => data.posts.nodes,
+    indexName : process.env.ALGOLIA_INDEX_NAME,
+    settings: {
+      attributesToSnippet: [`excerpt:20`],
+    },
+    matchFields: ['dateGmt'], // Array<String> overrides main match fields, optional
+  },
+];
+
 module.exports = {
   siteMetadata: {
     title: `Levels Blog: Ultimate Source for Metabolic Health Information and Advice`,
@@ -57,14 +87,17 @@ module.exports = {
         },
         html: {
           useGatsbyImage: false,
-          createStaticFiles: true,
+          createStaticFiles: process.env.NODE_ENV === 'development' ? false : true,
         },
         debug: {
           timeBuildSteps: true,
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 10 : 600,
+            limit: process.env.NODE_ENV === 'development' ? 10 : 3000,
+          },
+          Post:{
+            limit: process.env.NODE_ENV === 'development' ? 10 : 3000, 
           },
           Page: {
             exclude: true,
@@ -79,7 +112,7 @@ module.exports = {
             exclude: true,
           },
           Tag: {
-            limit: process.env.NODE_ENV === 'development' ? 50 : 250,
+            limit: process.env.NODE_ENV === 'development' ? 10 : 250,
           },
           Category: {
             limit: 50,
@@ -89,12 +122,23 @@ module.exports = {
           },
           MediaItem: {
             localFile: {
-              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 500,
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 50 : 3000,
               maxFileSizeBytes: 5485760,
             },
           },
         },
       }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        skipIndexing: false,
+        chunkSize: 10000
+      },
     },
   ],
 }

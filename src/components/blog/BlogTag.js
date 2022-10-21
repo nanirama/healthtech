@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 const BlogTag = ({tags, modified}) => {
-    console.log('tags',tags)
     return (
             <div className="tag_blk text-center">
                 <div className="lg:max-w-3xl md:max-w-xl max-w-full px-4 mx-auto mt-12">

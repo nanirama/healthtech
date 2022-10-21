@@ -1,16 +1,24 @@
 import React from "react"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
+
 import BlogFirstItem from "./BlogFirstItem"
 import BlogItem from "./BlogItem"
+
+const searchClient = algoliasearch('V3K6PZSFJ6', '1352dccf4a285e79389dbaddac5e536c');
 
 const CategoryIndex = ({ category, data }) => {
     const firstData = data.edges.slice(0, 1);
     const fourData = data.edges.slice(1, 5);
     const allData = data.edges.slice(5, data.edges.length);
-    console.log('first 5 records', firstData)
-    console.log('all records', allData)
+
     return (
         <div className="max-w-7xl mx-auto px-4 py-16">
+            {/* <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
+                <SearchBox/>
+                <Hits/>
+            </InstantSearch> */}
             <h1 className="text-5xl font-normal tracking-tight text-gray-900 mb-8">{category && category.name && category.name}</h1>
             <div class="grid md:grid-flow-row-dense lg:grid-cols-2 grid-cols-1 grid-rows-1 gap-6 mb-6">
                 {firstData && firstData.map((item,index)=>{
