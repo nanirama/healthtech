@@ -142,8 +142,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: `V3K6PZSFJ6`,
-        apiKey: `1352dccf4a285e79389dbaddac5e536c`,
+        appId: 'V3K6PZSFJ6',
+        apiKey: '1352dccf4a285e79389dbaddac5e536c',
         indexName: 'LevelsBlog', // for all queries
         queries,
         skipIndexing: false,
