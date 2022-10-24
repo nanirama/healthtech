@@ -8,11 +8,7 @@ import { Popover, Transition } from '@headlessui/react'
 import CustomAutocomplete from './elements/AutoComplete';
 import Logo from "../assets/images/logo.png"
 
-const searchClient = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_API_KEY);
-
-
-
-
+const searchClient = algoliasearch('V3K6PZSFJ6', '1352dccf4a285e79389dbaddac5e536c');
 
 
 

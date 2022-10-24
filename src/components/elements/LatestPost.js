@@ -33,7 +33,6 @@ const LatestPost = () => {
           }
         `
     )
-    console.log('LastPost', LastPost.edges[0].node)
     const { title, featuredImage } = LastPost.edges[0].node
     return (
         <div className="max-w-7xl mx-auto px-4 md:mt-8 mt-4">

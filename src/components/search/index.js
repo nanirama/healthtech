@@ -8,7 +8,7 @@ import {
     Highlight,
   } from "react-instantsearch-dom"
 
-const searchClient = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_API_KEY);
+const searchClient = algoliasearch('V3K6PZSFJ6', '1352dccf4a285e79389dbaddac5e536c');
 
 const SearchIndex = (props) => {
     return (
