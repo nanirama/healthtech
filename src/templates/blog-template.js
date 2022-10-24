@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import BlogIndex from '../components/blog'
 const BlogTemplate = (props) => {
-  console.log('props', props)
   const { title } = props.data.postDetails
   return (
     <Layout>

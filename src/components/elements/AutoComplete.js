@@ -3,8 +3,6 @@ import { connectAutoComplete } from 'react-instantsearch-dom';
 import { Link } from 'gatsby'
 
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
-    console.log('currentRefinement', currentRefinement)
-    console.log('hits', refine)
     return (
         <div class="">
             <div class="inline-flex flex-col justify-center relative text-gray-500">
