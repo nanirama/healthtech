@@ -13,7 +13,7 @@ const PostPreview = ({ hit }) => {
             </div>
             <div className="col-span-3 grid grid-cols-1 gap-0">
                 <div>
-                <h3><Link to={hit.slug}>
+                <h3><Link to={`/blog/${hit.slug}`}>
                     <Highlight hit={hit} attribute="title" tagName="mark" />
                 </Link>
                 </h3>
