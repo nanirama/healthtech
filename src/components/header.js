@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => {
         
 
           <div class="flex items-center md:w-72 md:flex hidden">   
-                <InstantSearch searchClient={searchClient} indexName={process.env.ALGOLIA_INDEX_NAME}>
+                <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
                     <CustomAutocomplete />
                 </InstantSearch>
             {/* <label for="voice-search" class="sr-only">Search</label>

@@ -15,10 +15,6 @@ const CategoryIndex = ({ category, data }) => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-16">
-            {/* <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
-                <SearchBox/>
-                <Hits/>
-            </InstantSearch> */}
             <h1 className="text-5xl font-normal tracking-tight text-gray-900 mb-8">{category && category.name && category.name}</h1>
             <div class="grid md:grid-flow-row-dense lg:grid-cols-2 grid-cols-1 grid-rows-1 gap-6 mb-6">
                 {firstData && firstData.map((item,index)=>{

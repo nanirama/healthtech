@@ -14,7 +14,7 @@ const SearchIndex = (props) => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16">
             <div class="grid grid-cols-1 gap-0 instant-search-outer">
-            <InstantSearch searchClient={searchClient} indexName={process.env.ALGOLIA_INDEX_NAME}>
+            <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
                 <SearchBox/>
                 <Hits hitComponent={PostPreview} />
             </InstantSearch>

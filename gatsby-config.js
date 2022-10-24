@@ -30,7 +30,7 @@ const queries = [
   {
     query: myQuery,
     transformer: ({ data }) => data.posts.nodes,
-    indexName : process.env.ALGOLIA_INDEX_NAME,
+    indexName : 'LevelsBlog',
     settings: {
       attributesToSnippet: [`excerpt:20`],
     },
