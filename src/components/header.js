@@ -2,8 +2,15 @@ import React, { Fragment } from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch } from "react-instantsearch-dom"
 import { Popover, Transition } from '@headlessui/react'
+import CustomAutocomplete from './elements/AutoComplete';
 import Logo from "../assets/images/logo.png"
+
+const searchClient = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_API_KEY);
+
+
 
 
 
@@ -35,11 +42,32 @@ const Header = ({ siteTitle }) => {
 
       <Popover className="w-100 absolute top-0 left-0 right-0 z-50 border-b border-gray-200 z-30">
         <div className="max-w-7xl mx-auto flex flex-row justify-between	items-center px-4 py-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+          <div className="flex justify-start ">
             <div className=''>
               <img src={Logo} alt="" width={176} height={48} className="pt-1" />
             </div>
           </div>
+          <div>
+        
+
+          <div class="flex items-center md:w-72 md:flex hidden">   
+                <InstantSearch searchClient={searchClient} indexName={process.env.ALGOLIA_INDEX_NAME}>
+                    <CustomAutocomplete />
+                </InstantSearch>
+            {/* <label for="voice-search" class="sr-only">Search</label>
+            <div class="relative w-full">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input type="text" id="voice-search" class="bg-slate-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Articles, Authors ..." required/>
+              
+            </div> */}
+          </div>
+
+
+
+
+        </div>
           <div className="-my-2 -mr-2 md:hidden z-60">
             <Popover.Button className="inline-flex items-center justify-end rounded-md p-2 rounded-full text-gray-400 bg-gray-100 w-12 h-12 hover:text-gray-500">
               <span className="sr-only">Open menu</span>
@@ -55,6 +83,7 @@ const Header = ({ siteTitle }) => {
             </a>
           </Popover.Group>
         </div>
+        
         {/* Mobile menu */}
         <Transition
           as={Fragment}

@@ -12,6 +12,16 @@ const myQuery = `{
       excerpt
       slug
       dateGmt
+      featuredImage {
+        node {
+          localFile {
+            url
+            childImageSharp {
+              gatsbyImageData(layout: FIXED, width: 200, height: 140)
+            }
+          }
+        }
+      }
     }
   }
 }`;

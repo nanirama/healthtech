@@ -102,3 +102,40 @@ p:empty{display: none;}
     .blogcontent h2{font-size:30px;line-height: 38px;}
 
 }
+.hit-preview h3 span.ais-Highlight{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 0.75rem
+}
+
+.hit-preview p span.ais-Highlight{
+    font-size: 1.075rem;
+    line-height: 1.25rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 0.75rem
+}
+.instant-search-outer .ais-SearchBox{
+    border:2px solid #989a9f;
+    height:40px;
+    overflow: hidden;
+    padding: 0px !important;
+    margin:0px !important;
+    width:100%;
+}
+.instant-search-outer .ais-SearchBox input{
+    padding:0.4rem !important;
+    margin:0px !important;
+    float: left;
+    width: -webkit-calc(100% - 40px);
+    width:    -moz-calc(100% - 40px);
+    width:         calc(100% - 40px);
+}
+.instant-search-outer .ais-SearchBox .ais-SearchBox-submit{
+    float: right;
+    padding:6px !important;
+}
+.instant-search-outer .ais-SearchBox .ais-SearchBox-submit svg{    
+    width:24px !important;
+    height: 24px !important;
+}

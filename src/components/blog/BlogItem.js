@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 const BlogItem = ({ data }) => {
-    const { title, slug, excerpt, author, featuredImage, categories, blogSingle } = data
+    const { title, slug, author, featuredImage, categories, blogSingle } = data
     const pcategory = categories?.nodes[0] ? categories.nodes[0] : {}
     const cutString = (s, n) => {
         var cut = s.indexOf(' ', n);
