@@ -42,8 +42,8 @@ module.exports = {
   siteMetadata: {
     title: `Levels Blog: Ultimate Source for Metabolic Health Information and Advice`,
     description: `The Levels Blog is the leading source of information on the importance of metabolic health and the utility of continuous glucose monitors as biofeedback.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `@nanirama`,
+    siteUrl: `https://www.levelshealth.com/`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -150,5 +150,23 @@ module.exports = {
         chunkSize: 10000
       },
     },
+    {
+      resolve: `gatsby-plugin-social9-socialshare`,
+      options: {
+        content:  `1533dc2b1123411b82328f3010cf5b69`,
+        async:  true,
+        defer:  true
+      }
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        id: "s9-sdk",
+        async: true,
+        defer: true,
+        content: `1533dc2b1123411b82328f3010cf5b69`,
+        src: "//cdn.social9.com/js/socialshare.min.js"
+      },
+    }
   ],
 }

@@ -5,7 +5,22 @@ module.exports = {
     "./src/components/**/*.{vue,js,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor:{
+        green:{
+          500: '#05473c',
+        }
+      },
+      colors: {
+        green: {
+          500: '#05473c',
+        },
+        green: {
+          400: '#54ecca',
+        },
+        
+    },
   },
   plugins: [],
+  }
 }

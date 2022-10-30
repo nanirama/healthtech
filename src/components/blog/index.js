@@ -77,6 +77,7 @@ const Index = ({ props }) => {
                     {content && <div dangerouslySetInnerHTML={{ __html: content }} className="w-fll" ></div>}
                 </div>
                 <BlogTag tags={tags} modified={modified} />
+                <div className="s9-widget-wrapper"></div>
             </div>
         </>
     )

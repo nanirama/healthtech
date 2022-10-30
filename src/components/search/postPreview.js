@@ -1,11 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Highlight } from "react-instantsearch-dom"
+import { connectHitInsights, Highlight } from 'react-instantsearch-dom';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import parse  from 'html-react-parser';
 
-const PostPreview = ({ hit }) => {
-    console.log('hit details', hit)
+const PostPreview = ({ hit, insights }) => {
     return (
         <div className="grid grid-cols-4 gap-4 my-1 py-1 hit-preview">
             <div className="col-span-1 overflow-hidden">
