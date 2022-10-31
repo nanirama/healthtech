@@ -15,11 +15,11 @@ const HomeCategoryArticles = ({ data, title, slug }) => {
         <div className="mx-auto pt-8 px-4 max-w-7xl">
             <div className="bg-gray-700 text-white px-5 py-2 text-xl mb-5">{title && title}</div>
             <div class="grid lg:grid-cols-4 gap-5 mb-8 flex justify-start items-stretch justify-items-stretch">
-                <div class="col-span-3">
-                    <PostCard1 data={firstData[0].node} />
+                <div class="col-span-3">                    
+                    {firstData && firstData[0] && firstData[0].node && (<PostCard1 data={firstData[0].node} />)}
                 </div>
                 <div className="flex flex justify-start items-stretch justify-items-stretch">
-                    <PostCard2 data={SecondData[0].node} />
+                    {SecondData && SecondData[0] && SecondData[0].node && (<PostCard2 data={SecondData[0].node} />)}
                 </div>
             </div>
 

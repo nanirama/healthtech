@@ -16,7 +16,7 @@ const PostCard3 = ({ data }) => {
     const category = categories.nodes[0]
 
     return (
-        <div className=" flex flex-row justify-items-stretch justify-start gap-4 border-b-2 border-gray-200 pb-4">
+        <div className=" flex flex-row justify-items-stretch justify-start gap-4 article1 border-b-2 border-gray-200 pb-4">
             <div class="w-1/2 flex flex-col justify-between">
                 <div class="">
                     <h6 class="text-sm uppercase text-slate-700 pb-2">{category?.name}</h6>

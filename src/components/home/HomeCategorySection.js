@@ -21,24 +21,26 @@ const HomeCategorySection = ({
                     <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
                         <div className="col-span-3 border-r-2 border-gray-200 pr-4">
                             <div className="grid grid-cols-1 gap-4">
-                                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+                                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 h-100 items-stretch">
+                                    
                                     <div className="col-span-2 border-r-2 border-gray-200 pr-4">
                                         <PostCard3 data={NutritionData[0].node}/>  
                                     </div>
-                                    <div className="">
+                                    <div className="border-b-2 border-gray-200">
                                         <PostCard4 data={NutritionData[1].node}/>    
                                     </div>
+                                   
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 gap-4">
-                                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 flex-row justify-items-stretch justify-start">
-                                    <div className="col-span-2 border-r-2 border-gray-200 pr-4 pt-4">
+                                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 flex-row h-100 items-stretch  justify-items-stretch justify-start">
+                                    <div className="col-span-2 border-r-2 border-gray-200 pr-4 pt-4 h-100 items-stretch flex">
                                         <PostCard3 data={PersonalStoriesData[0].node}/>  
                                     </div>
                                     <div className="flex flex-row justify-items-stretch justify-start grid lg:grid-cols-2 grid-cols-1 gap-2">
                                         {MetabolicHealthData && MetabolicHealthData.map((item,index)=>{
                                             return(
-                                                <div className={`pt-4 flex flex-row justify-items-stretch justify-between ${index===0 ? 'pr-2 border-r-2 border-gray-200' : 'pl-2'}`} key={index}>
+                                                <div className={`flex flex-row article border-r-2 border-gray-200 pr-4 mt-4 justify-items-stretch justify-between ${index===0 ? 'pr-4' : 'pl-2'}`} key={index}>
                                                     <PostCard5 data={item.node}/>    
                                                 </div>
                                             )

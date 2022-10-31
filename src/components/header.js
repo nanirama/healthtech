@@ -44,15 +44,16 @@ const Header = ({ siteTitle }) => {
 
       <Popover className="w-100 absolute top-0 left-0 right-0 z-50 border-b border-gray-200 z-30">
         <div className="max-w-7xl mx-auto flex flex-row justify-between	items-center px-4 py-10">
-          <div className="flex justify-start ">
-            <div className=''>
+          <div className="flex justify-starts">
+            <div className='pr-8'>
               <img src={Logo} alt="" width={176} height={48} className="pt-1" />
             </div>
+            <div className='text-3xl font-bold pl-8 uppercase border-l border-gray-900'>metabolic insights</div>
           </div>
           <div>
         
 
-          <div class="flex items-center md:w-72 md:flex hidden">   
+          <div class="flex items-center md:flex hidden">   
                 <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
                     <Configure clickAnalytics />
                     <CustomAutocomplete />
@@ -71,20 +72,20 @@ const Header = ({ siteTitle }) => {
 
 
         </div>
-          <div className="-my-2 -mr-2 md:hidden z-60">
+          {/* <div className="-my-2 -mr-2 md:hidden z-60">
             <Popover.Button className="inline-flex items-center justify-end rounded-md p-2 rounded-full text-gray-400 bg-gray-100 w-12 h-12 hover:text-gray-500">
               <span className="sr-only">Open menu</span>
               <svg fill="#000" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero" /></svg>
             </Popover.Button>
-          </div>
-          <Popover.Group as="nav" className="hidden space-x-8 md:flex">
+          </div> */}
+          {/* <Popover.Group as="nav" className="hidden space-x-8 md:flex">
             <a href="#" className="capitalize text-black text-sm ttfont-bold border-b-4 pb-1 border-transparent hover:border-teal-200">
               levels blog
             </a>
             <a href="#" className="capitalize text-black text-sm ttfont-bold border-b-4 pb-1 border-transparent hover:border-teal-200">
               request access
             </a>
-          </Popover.Group>
+          </Popover.Group> */}
         </div>
         
         {/* Mobile menu */}
@@ -104,16 +105,16 @@ const Header = ({ siteTitle }) => {
                   <div>
                     <img src={Logo} alt="" width={176} height={48} className="pt-1" />
                   </div>
-                  <div className="-mr-2">
+                  {/* <div className="-mr-2">
                     <Popover.Button className="inline-flex items-center justify-center rounded-full w-12 h-12 bg-white p-2 bg-gray-100">
                       <span className="sr-only">Close menu</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill='#000'><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" /></svg>
                     </Popover.Button>
-                  </div>
+                  </div> */}
                 </div>
 
               </div>
-              <div className="py-6 px-5">
+              {/* <div className="py-6 px-5">
                 <div className="flex flex-col gap-4">
                   <a href="#" className="capitalize text-black text-sm ttfont-bold">
                     levels blog
@@ -123,7 +124,7 @@ const Header = ({ siteTitle }) => {
                     request access
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Popover.Panel>
         </Transition>

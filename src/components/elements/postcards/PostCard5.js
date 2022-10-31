@@ -11,7 +11,7 @@ const PostCard5 = ({ data }) => {
     const category = categories.nodes[0]
 
     return (
-        <div class="flex flex-col justify-between border-b-2 border-gray-200 pb-4">
+        <div class="flex flex-col justify-between">
             <div>
                 <GatsbyImage image={getImage(featuredImage.node.localFile)} alt={title && title} width={600} height={539} className="w-full" />
                 <h6 class="text-xs uppercase text-slate-700 my-2">{category?.name}</h6>

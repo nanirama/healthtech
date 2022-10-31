@@ -45,6 +45,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
+        <Footer />
     </>
   )
 }
