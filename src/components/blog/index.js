@@ -28,6 +28,7 @@ const Index = ({ props }) => {
     const [article, setArticle] = useState({});
 
     useEffect(async () => {
+        index.search(slug).then(({ hits }) => setArticle(hits[0]));
         try {
             aa('convertedObjectIDsAfterSearch', {
                 eventType: 'view',
