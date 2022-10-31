@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby"
+import aa from 'search-insights'
 
 import Header from "./header"
 import Footer from "./footer"
@@ -23,6 +24,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  
+  aa('init',{
+    appId: 'V3K6PZSFJ6',
+    apiKey: '1352dccf4a285e79389dbaddac5e536c'
+  });
+
+  aa('setUserToken','user-1');
 
   return (
     <>

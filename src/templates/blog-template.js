@@ -39,6 +39,7 @@ export const query = graphql`
       content
       id
       title
+      slug
       modified(formatString: "YYYY-MM-DD")
       date(formatString: "YYYY-MM-DD")
       author {

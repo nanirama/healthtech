@@ -1,11 +1,19 @@
-import React from "react"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import React, {useEffect, useState } from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import algoliasearch from 'algoliasearch/lite';
+import aa from 'search-insights';
 import BlogTag from "./BlogTag"
 import Share from "./Share"
 
+const searchClient = algoliasearch('V3K6PZSFJ6', '1352dccf4a285e79389dbaddac5e536c');
 const Index = ({ props }) => {
+    const indexName = 'LevelsBlog';
+    const index = searchClient.initIndex(indexName)
+    console.log('index',index)
     const { site, postDetails } = props.data
-    const { title, content, featuredImage, author, blogSingle, tags, categories, modified, date } = postDetails
+    const { title, content, featuredImage, author, blogSingle, tags, categories, modified, date, slug } = postDetails
+
+    console.log('slug', slug)
     const { readingTime, contentOverview } = blogSingle
 
     const siteURL = site.siteMetadata.siteUrl
@@ -16,6 +24,21 @@ const Index = ({ props }) => {
     const stwitterHandle = "_MsLinda";
 
     const pcategory = categories?.nodes[0] ? categories.nodes[0] : {}
+
+    const [article, setArticle] = useState({});
+
+    useEffect(() => {
+        index.search(slug).then(({ hits }) => setArticle(hits[0]));
+        aa('convertedObjectIDsAfterSearch', {
+            index: indexName,
+            eventName: 'Article Viewed',
+            userToken: 'user-1',
+            objectIDs: [article.objectID],
+            queryID: '?',
+          });
+      }, []);
+
+      console.log('product',article)
     return (
         <>
             <div className="w-full blogbanner relative">

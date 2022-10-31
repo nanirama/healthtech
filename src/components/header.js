@@ -3,7 +3,13 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch } from "react-instantsearch-dom"
+import {
+  InstantSearch,
+  SearchBox,
+  Hits,
+  Highlight,
+  Configure
+} from "react-instantsearch-dom"
 import { Popover, Transition } from '@headlessui/react'
 import CustomAutocomplete from './elements/AutoComplete';
 import Logo from "../assets/images/logo.png"
@@ -48,6 +54,7 @@ const Header = ({ siteTitle }) => {
 
           <div class="flex items-center md:w-72 md:flex hidden">   
                 <InstantSearch searchClient={searchClient} indexName="LevelsBlog">
+                    <Configure clickAnalytics />
                     <CustomAutocomplete />
                 </InstantSearch>
             {/* <label for="voice-search" class="sr-only">Search</label>
