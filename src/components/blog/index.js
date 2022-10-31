@@ -30,6 +30,7 @@ const Index = ({ props }) => {
     useEffect(async () => {
         try {
             aa('convertedObjectIDsAfterSearch', {
+                eventType: 'view',
                 index: indexName,
                 eventName: 'Article Viewed',
                 userToken: 'user-1',
