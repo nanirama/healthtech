@@ -27,18 +27,32 @@ const Index = ({ props }) => {
 
     const [article, setArticle] = useState({});
 
-    useEffect(() => {
-        index.search(slug).then(({ hits }) => setArticle(hits[0]));
-        aa('convertedObjectIDsAfterSearch', {
-            index: indexName,
-            eventName: 'Article Viewed',
-            userToken: 'user-1',
-            objectIDs: [article.objectID],
-            queryID: '?',
-          });
-      }, []);
+    useEffect(async () => {
+        try {
+            aa('convertedObjectIDsAfterSearch', {
+                index: indexName,
+                eventName: 'Article Viewed',
+                userToken: 'user-1',
+                objectIDs: [article.objectID],
+                queryID: '?',
+              });
+        } catch (err) {
+          console.log('err', err)
+        }
+      }, [])
 
-      console.log('product',article)
+    // useEffect(() => {
+    //     index.search(slug).then(({ hits }) => setArticle(hits[0]));
+    //     aa('convertedObjectIDsAfterSearch', {
+    //         index: indexName,
+    //         eventName: 'Article Viewed',
+    //         userToken: 'user-1',
+    //         objectIDs: [article.objectID],
+    //         queryID: '?',
+    //       });
+    //   }, []);
+
+    //  console.log('product',article)
     return (
         <>
             <div className="w-full blogbanner relative">
